@@ -1,22 +1,30 @@
-@extends('layouts.app')
+<x-app-layout>
 
-@section('content')
+    <x-slot:title>
+        Dashboard
+    </x-slot:title>
 
-<div class="row justify-content-center mt-5">
-    <div class="col-md-8">
+
+    <x-slot:headingTitle>
+        Dashboard
+    </x-slot:headingTitle>
+
+    <x-slot:headingSubTitle>
+        Welcome to Dashboard
+    </x-slot:headingSubTitle>
+
+    <section class="section">
         <div class="card">
-            <div class="card-header">Home</div>
+            <div class="card-header">
+                <h4 class="card-title">Example Content</h4>
+            </div>
             <div class="card-body">
-                <div class="alert alert-success">
-                    @if ($message = Session::get('success'))
-                    {{ $message }}
-                    @else
-                    You are logged in!
-                    @endif
-                </div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quas omnis
+                laudantium tempore
+                exercitationem, expedita aspernatur sed officia asperiores unde tempora maxime odio
+                reprehenderit
+                distinctio incidunt! Vel aspernatur dicta consequatur!
             </div>
         </div>
-    </div>
-</div>
-
-@endsection
+    </section>
+</x-app-layout>
