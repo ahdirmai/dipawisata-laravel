@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\Auth\LoginRegisterController;
 use App\Http\Controllers\Admin\Dashboard\DashboardController;
+use App\Http\Controllers\Admin\TermAndCondition\TermAndConditionController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -40,6 +41,12 @@ Route::prefix('admin')->name('admin.')->group(function () {
         // admin dashboard Controller
         Route::prefix('dashboard')->name('dashboard.')->group(function () {
             Route::get('/', [DashboardController::class, 'index'])->name('index');
+        });
+
+        // admin term and condition Controller
+        Route::prefix('term-and-condition')->name('term-and-condition.')->group(function () {
+            Route::get('/', [TermAndConditionController::class, 'index'])->name('index');
+            Route::PUT('/store', [TermAndConditionController::class, 'store'])->name('store');
         });
     });
 });

@@ -18,6 +18,14 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
+
+
+                <li class="sidebar-item {{ request()->routeIs('admin.term-and-condition.*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.term-and-condition.index') }}" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Syarat ketentuan Pembayaran</span>
+                    </a>
+                </li>
             </ul>
         </div>
         <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
