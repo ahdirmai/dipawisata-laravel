@@ -21,7 +21,11 @@ class AppLayout extends Component
      */
     public function render(): View|Closure|string
     {
-        $app_name = config('app.name');
+        $header = \App\Models\Setting\Header::first();
+
+
+
+        $app_name = $header->website_name;
         return view('layouts.app', compact('app_name'));
     }
 }

@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\Admin\Auth\LoginRegisterController;
 use App\Http\Controllers\Admin\Dashboard\DashboardController;
+use App\Http\Controllers\Admin\Setting\ApiKeyController;
+use App\Http\Controllers\Admin\Setting\FooterController;
+use App\Http\Controllers\Admin\Setting\HeaderController;
 use App\Http\Controllers\Admin\Setting\SettingController;
 use App\Http\Controllers\Admin\TermAndCondition\TermAndConditionController;
 use App\Http\Controllers\ProfileController;
@@ -54,7 +57,11 @@ Route::prefix('admin')->name('admin.')->group(function () {
         // setting routes
         Route::prefix('setting')->name('setting.')->group(function () {
             Route::get('/', [SettingController::class, 'index'])->name('index');
-            Route::put('/header/store', [SettingController::class, 'headerStore'])->name('header-store');
+            Route::put('/header/store', HeaderController::class)->name('header-store');
+
+            Route::put('/footer/store', FooterController::class)->name('footer-store');
+
+            Route::put('/api-key/store', ApiKeyController::class)->name('api-key-store');
         });
     });
 });

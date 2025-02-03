@@ -11,20 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('footers', function (Blueprint $table) {
+        Schema::create('setting_footers', function (Blueprint $table) {
             $table->id();
             // instagram
-            $table->string('instagram')->nullable();
+            $table->string('instagram_url')->nullable();
             // facebook
-            $table->string('facebook')->nullable();
+            $table->string('facebook_url')->nullable();
             // twitter
-            $table->string('twitter')->nullable();
+            $table->string('twitter_url')->nullable();
             // linkedin
-            $table->string('linkedin')->nullable();
+            $table->string('linkedin_url')->nullable();
             // youtube
-            $table->string('youtube')->nullable();
+            $table->string('youtube_url')->nullable();
             // whatsapp
-            $table->string('whatsapp')->nullable();
+            $table->string('whatsapp_url')->nullable();
             //footer copy right
             $table->string('copy_right')->nullable();
             $table->timestamps();

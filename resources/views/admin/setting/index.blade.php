@@ -107,15 +107,7 @@
                                 aria-labelledby="v-pills-api-key-tab">
 
                                 {{-- card --}}
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h4 class="card-title
-                                            ">Api Key</h4>
-                                        <div class="card-body">
-                                            Api Key
-                                        </div>
-                                    </div>
-                                </div>
+                                @include('admin.setting.includes.apikey-form')
                             </div>
 
                             <div class="tab-pane fade" id="v-pills-send-location" role="tabpanel"
